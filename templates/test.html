@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body, html {
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.bg-img {
+  /* The image used */
+  background-image:url('https://www.sellanycar.com/cars-related/wp-content/uploads/2015/05/2015-best-buy-awards-sports-performance-car-group.jpg');
+
+
+  /* Center and scale the image nicely */
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+/* Add styles to the form container */
+.container {
+  position: absolute;
+  right: 0;
+  margin: 20px;
+  max-width: 300px;
+  padding: 16px;
+  background-color: white;
+}
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: yellow;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 2px 2px;
+  cursor: pointer;
+}
+
+.button1 {border-radius: 2px;}
+.button2 {border-radius: 4px;}
+.button3 {border-radius: 8px;}
+.button4 {border-radius: 12px;}
+.button5 {border-radius: 50%;}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit button */
+.btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+</style>
+</head>
+<body>
+<div class="bg-img">
+<h2 style="color:blue;"><center>Car Price Prediction</h2>
+
+  <form action="{{ url_for('predict')}}" method="post",class="container">
+  <table align="center" >
+          <tr>
+          </tr>
+          <tr>
+              <td style="color:blue;">Car model(Year)</td>
+                <td><input id="first" name="Year" type="number "> </td>
+          </tr>
+          <tr>
+              <td style="color:blue;">What is the Showroom Price?(In lakhs)</td>
+              <td><input id="second" name="Present_Price" required="required"></td>
+          </tr>
+          <tr>
+              <td style="color:blue;">How Many Kilometers Drived?</td>
+              <td><input id="third" name="Kms_Driven" required="required"></td>
+          </tr>
+          <tr>
+              <td style="color:blue;">How much owners previously had the car?</td>
+              <td><input id="fourth" name="Owner" required="required"></td>
+          </tr>
+          <tr>
+              <td style="color:blue;">What Is the Fuel type?</td>
+              <td><select name="Fuel_Type_Petrol" id="fuel" required="required">
+                <option value="Petrol">Petrol</option>
+                <option value="Diesel">Diesel</option>
+                <option value="CNG">CNG</option>
+            </select></td>
+          </tr>
+          <tr>
+              <td style="color:blue;">Are you A Dealer or Individual</td>
+              <td><select name="Seller_Type_Individual" id="resea" required="required">
+                <option value="Dealer">Dealer</option>
+                <option value="Individual">Individual</option>
+            </select></td>
+          </tr>
+          <tr>
+              <td style="color:blue;">Transmission type</td>
+              <td><select name="Transmission_Mannual" id="research" required="required">
+                <option value="Mannual">Manual Car</option>
+                <option value="Automatic">Automatic Car</option>
+            </select></td>
+          </tr>
+      <tr>
+          <td></td>
+      </tr>
+      <tr>
+          <td></td>
+      </tr>
+          <tr>
+              <td align="right"></td>
+              <td></td>
+          </tr>
+        </table>
+
+      <br>
+      <div align="center"><button style="background-color:grey;height:40px;width:100px"  class="button button4" id="sub" type="submit "
+              >Get Your Price</button></div>
+      <div align="center"><h3 style="color:blue;">{{ prediction_text }}<h3></div>
+      <br>
+
+      <br>
+
+      <br>
+
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
+
+  </form>
+</div>
+
+
+</body>
+</html>
